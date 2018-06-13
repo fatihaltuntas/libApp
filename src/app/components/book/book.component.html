@@ -1,0 +1,37 @@
+<mat-toolbar> Book Details </mat-toolbar>
+
+<div *ngIf="!title" class="spinner"> 
+     <mat-spinner></mat-spinner>
+</div>
+
+<div class="details-book" *ngIf="title">
+        <mat-card>
+                <mat-card-title>
+                        <span class="mat-headline">{{title}}</span>
+                </mat-card-title>
+                <mat-card-content>
+                    <div class="left">
+                            <img src="{{imageUrl}}" />
+                    </div>
+                    <div class="right">
+                        <mat-list>
+                                <mat-list-item> <i class="material-icons">person_pin</i> Author:&nbsp;&nbsp;<b> {{author}}</b> </mat-list-item>
+                                <mat-list-item> <i class="material-icons">date_range</i> Date Added:&nbsp;&nbsp;<b> {{dateadded}}</b> </mat-list-item>
+                                <mat-list-item *ngIf="dateread"> <i class="material-icons">date_range</i> Date Read:&nbsp;&nbsp;<b> {{dateread}}</b> </mat-list-item>
+                                <mat-list-item> <i class="material-icons">attach_money</i> Price:&nbsp;&nbsp;<b> {{price}}</b></mat-list-item>
+                                <mat-list-item *ngIf="rate"> <i class="material-icons">star</i> Rate:&nbsp;&nbsp;<b>{{rate}}</b></mat-list-item>
+                        </mat-list>
+                    </div>
+                    <hr>
+                    <mat-toolbar>Description</mat-toolbar>
+                    {{description}}
+                    <p *ngIf="!description"> No description for this book! </p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button [routerLink]="['/books']" mat-raised-button> <i class="material-icons">view_module</i> All Books </button>
+                    <button [routerLink]="['/edit-book/'+id]"  mat-raised-button class="editButton"> <i class="material-icons">mode_edit</i> Edit </button> 
+                    <button [routerLink]="['/delete-book/'+id]" mat-raised-button color="warn"> <i class="material-icons">delete_sweep</i> Delete </button>
+                </mat-card-actions>
+            </mat-card>
+</div>
+            

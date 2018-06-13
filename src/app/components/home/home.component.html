@@ -1,0 +1,45 @@
+<div *ngIf="authenticated">
+<mat-toolbar>My Top Rated Book</mat-toolbar>
+<mat-grid-list cols="3">
+    <mat-grid-tile *ngFor="let book of favoriteBooks" >
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title><h4>{{book.title}}</h4></mat-card-title>
+            </mat-card-header>
+            <img mat-card-image src="{{book.imageUrl}}" alt="{{book.title}}">
+            <mat-card-actions>
+                <button mat-button mat-raised-button class="detailsButton" [routerLink]="['/book/'+book.$key]">
+                     <i class="material-icons">visibility</i> Book Details</button>
+                <button mat-button mat-raised-button class="editButton" [routerLink]="['/edit-book/'+book.$key]">
+                     <i class="material-icons">mode_edit</i> Edit Book</button>
+            </mat-card-actions>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>
+
+<br>
+    <br>
+    <br>
+    <mat-toolbar> Books I have not read yet </mat-toolbar>
+    <mat-grid-list cols="3">
+        <mat-grid-tile *ngFor="let book of unreadBooks">
+            <mat-card>
+                <mat-card-header>
+                  <mat-card-title><h4>{{book.title}}</h4></mat-card-title>
+                </mat-card-header>
+                <img mat-card-image src="{{book.imageUrl}}" alt="{{book.title}}">
+                <mat-card-content>
+                  <p></p>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button mat-button mat-raised-button [routerLink]="['/book/'+book.$key]"> Book Details</button>
+                  <button mat-button mat-raised-button [routerLink]="['/edit-book/'+book.$key]"> Edit Book</button>
+                </mat-card-actions>
+              </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
+
+<div *ngIf="!authenticated">
+    <h1>Lütfen kullanıcı girişi yapınız.</h1>
+</div>

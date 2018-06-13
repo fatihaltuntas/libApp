@@ -1,0 +1,35 @@
+<mat-card>Edit Book</mat-card>
+
+<div class="edit-book-form">
+    <a [routerLink]="['/books']">Back</a>
+    <form #values="ngForm" (submit)="submitEdit()">
+      <mat-input-container class="full-width">
+        <input matInput placeholder="Book Title" [(ngModel)]="title" name="title">
+      </mat-input-container>
+      <mat-input-container class="full-width">
+        <input matInput placeholder="Book Author" [(ngModel)]="author" name="author">
+      </mat-input-container>
+      <mat-input-container class="full-width">
+        <input matInput placeholder="Book Price" type="number" [(ngModel)]="price" name="price">
+      </mat-input-container>
+      
+      
+
+      
+      <mat-input-container class="full-width">
+          <textarea matInput rows="5" placeholder="Book Description" [(ngModel)]="description" name="description" ></textarea>
+        </mat-input-container>
+    
+      <mat-input-container class="full-width">
+        <input matInput placeholder="Book Rate (1-5)" min="1" max="5" step="0.1" type="number" [(ngModel)]="rate" name="rate">
+      </mat-input-container>    
+     
+
+      <mat-input-container class="third-width">
+          <input matInput placeholder="Image Url (enter image URL)" [(ngModel)]="imageUrl" name="imageUrl">
+      </mat-input-container>
+      <img src="{{imageUrl}}" alt="{{title}}">
+      <hr>
+      <button mat-raised-button value="submit"> Save Changes </button>
+    </form>
+</div>

@@ -1,0 +1,87 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+li{ list-style: none; }
+td{ padding-right: 50px; }
+
+.full-width { width: 100%; }
+.half-width { width: 50%; }
+.third-width{ width: 75%; }
+.quarter-width{ width: 25%; }
+
+md-grid-tile{
+    box-shadow: 10px 10px 5px #888888;
+    margin: 1em auto;
+}
+
+.full-heigth {
+    height: -moz-calc(100% - 64px); 
+    height: -webkit-calc(100% - 64px); 
+    height: calc(100% - 64px);
+}
+
+.add-book-form {
+    width: 40%;
+    margin:0 auto;
+    padding: 2em;
+    box-shadow: 0 0 1px black;
+}
+
+.edit-book-form{
+    width: 40%;
+    margin:0 auto;
+    padding: 2em;
+    box-shadow: 0 0 1px black;
+}
+
+
+.left{float: left}
+.right{float: left; padding: 25px;}
+
+.delete-confirm{margin:0 auto; width: 40%;}
+.details-book{ margin:0 auto; width: 60%;height: 100vh }
+.bookTile{padding:25px auto;}
+.editButton{
+    color :white !important;
+    background-color: rgba(255, 222, 121, 0.96);
+}
+
+.detailsButton{
+    color :white !important;
+    background-color: rgb(114, 168, 255)
+}
+.appTitle{margin:0 auto; width: 70%;}
+.appTitleDiv{
+    color :white !important; 
+    background-color: rgb(113, 167, 255);
+    padding-top: 100px;
+    padding-bottom: 100px;
+    font-size: 30px;
+}
+
+div.appTitleDiv > h1{
+font-size: 200%;
+}
+
+.footer {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: rgb(114, 168, 255);
+    color :white !important;
+    text-align: center;
+  }
+
+  div.footer>a{
+    color :white !important;
+  }
+
+  .spinner{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+  }
